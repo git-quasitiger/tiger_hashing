@@ -1,6 +1,8 @@
 import argparse
-import hashlib
 import os
+
+from hash_digest import md5_digest, sha1_digest, sha256_digest
+
 
 # 입력받은 경로의 백슬래시 \ 를 슬래시 / 로 바꾼 후 출력하는 함수
 def read_file(_file_path) -> bytes:
@@ -26,21 +28,8 @@ def read_file(_file_path) -> bytes:
     # 파일의 바이너리 데이터를 리턴
     return data
 
-
-# 바이너리 데이터를 입력받아 md5 해시값을 반환하는 함수
-def md5_digest(_data) -> str:
-    pass
-
-# 바이너리 데이터를 입력받아 sha1 해시값을 반환하는 함수
-def sha1_digest(_data) -> str:
-    pass
-
-# 바이너리 데이터를 입력받아 sha256 해시값을 반환하는 함수
-def sha256_digest(_data) -> str:
-    pass
-
 # 파일 데이터와 옵션을 받아서 해시 계산 후 출력하는 함수
-def hash_digest(_data, _option):
+def calc_hash(_data, _option):
 
     if _option == 'all':
         print(f'MD5 : {md5_digest(_data)}')
@@ -76,5 +65,5 @@ if __name__ == '__main__':
 
     # 해시 계산
     if data:
-        hash_digest(data, args.option)
+        calc_hash(data, args.option)
 
