@@ -2,4 +2,4 @@ main.py
 .git
 hash_complate.py
 main.py
-__pycache__
+/__pycache__/
